@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
-
-    private int InvalidSpawnIndex = -1;
+    public GameObject[] EnemyPrefabs;
 
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Transform[] _targetTransforms;
     [SerializeField] private float _spawnInterval = 2f;
+
+    private int InvalidSpawnIndex = -1;
 
     private void Start()
     {
@@ -30,10 +30,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(Transform spawnPoint)
     {
-        if (enemyPrefabs.Length == 0)
+        if (EnemyPrefabs.Length == 0)
             return;
 
-        GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+        GameObject enemyPrefab = EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length)];
         if (enemyPrefab == null)
             return;
 

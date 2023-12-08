@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public float speed = 3.0f;
+    public float Speed = 3.0f;
     private Vector3[] _routePoints;
     private int _currentPointIndex = 0;
     private EnemySpawner _spawner;
+
+   private void Update()
+    {
+        MoveOnRoute();
+    }
 
     public void SetSpawner(EnemySpawner spawner)
     {
@@ -17,18 +22,13 @@ public class Target : MonoBehaviour
         _routePoints = routePoints;
     }
 
-    void Update()
-    {
-        MoveOnRoute();
-    }
-
     private void MoveOnRoute()
     {
         if (_routePoints != null && _routePoints.Length > 0)
         {
             Vector3 targetPoint = _routePoints[_currentPointIndex];
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPoint, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPoint, Speed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, targetPoint) < 0.1f)
             {
