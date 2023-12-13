@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623c68abab4bdc0438b1cad29ce780ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
+  EnemyPrefabs:
   - {fileID: 6998503493102233786, guid: 8d3c80f1a76f04745b186ff0de2438d1, type: 3}
   - {fileID: 4582182770582194437, guid: 37f3e2fc4d94e88498b7290403680224, type: 3}
   - {fileID: 2759684302070379479, guid: 9237ee631ba4d9944b9ce1cda3b717ab, type: 3}
